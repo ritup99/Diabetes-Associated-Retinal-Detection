@@ -43,9 +43,9 @@ def load_lottie_file(filepath):
     except:
         return None
 
-animation_welcome = load_lottie_file(r"C:\Users\ritur\Desktop\project_DARD\theeye.json")
-animation_processing = load_lottie_file(r"C:\Users\ritur\Desktop\project_DARD\processing.json")
-animation_success = load_lottie_file(r"C:\Users\ritur\Desktop\project_DARD\done.json")
+animation_welcome = load_lottie_file("theeye.json")
+animation_processing = load_lottie_file("processing.json")
+animation_success = load_lottie_file("done.json")
 
 # =============== Functions ===================
 def classify_image(img):
