@@ -16,15 +16,7 @@ import json
 # =============== Load models ===================
 
 
-"""print("Current directory:", os.getcwd())
-print("Files in directory:", os.listdir())
-
-try:
-    model = tf.keras.models.load_model("trained_model.keras")
-    retinal_check_model = tf.keras.models.load_model("retinal_non_retinal_classifier.keras")
-except Exception as e:
-    st.error(f"Error loading model: {e}")
-    raise
+"""
 
 
 model = tf.keras.models.load_model("trained_model.keras")
@@ -54,6 +46,18 @@ if not os.path.exists(model_path):
         f.write(r.content)
 
 model = tf.keras.models.load_model(retinal_non_retinal_classifier.keras)
+
+
+print("Current directory:", os.getcwd())
+print("Files in directory:", os.listdir())
+
+try:
+    model = tf.keras.models.load_model("trained_model.keras")
+    retinal_check_model = tf.keras.models.load_model("retinal_non_retinal_classifier.keras")
+except Exception as e:
+    st.error(f"Error loading model: {e}")
+    raise
+
 
 
 #end of new line of code
