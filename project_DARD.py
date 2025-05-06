@@ -27,6 +27,17 @@ retinal_check_model = tf.keras.models.load_model("retinal_non_retinal_classifier
 import tensorflow as tf
 import requests
 
+
+print("Current directory:", os.getcwd())
+print("Files in directory:", os.listdir())
+
+try:
+    model = tf.keras.models.load_model("trained_model.keras")
+    retinal_check_model = tf.keras.models.load_model("retinal_non_retinal_classifier.keras")
+except Exception as e:
+    st.error(f"Error loading model: {e}")
+    raise
+
 model_path = "trained_model.keras"
 
 if not os.path.exists(model_path):
