@@ -16,7 +16,7 @@ import json
 # =============== Load models ===================
 
 
-print("Current directory:", os.getcwd())
+"""print("Current directory:", os.getcwd())
 print("Files in directory:", os.listdir())
 
 try:
@@ -28,7 +28,35 @@ except Exception as e:
 
 
 model = tf.keras.models.load_model("trained_model.keras")
-retinal_check_model = tf.keras.models.load_model("retinal_non_retinal_classifier.keras")
+retinal_check_model = tf.keras.models.load_model("retinal_non_retinal_classifier.keras")"""
+
+#add new line of code for model
+
+import tensorflow as tf
+import requests
+
+model_path = "trained_model.keras"
+
+if not os.path.exists(model_path):
+    url = "https://drive.google.com/file/d/1i7R_4r8QYn4jN9vI87X8H-DoEHGAoyJk"
+    r = requests.get(url)
+    with open(model_path, 'wb') as f:
+        f.write(r.content)
+
+model = tf.keras.models.load_model(trained_model.keras)
+
+model_path = "retinal_non_retinal_classifier.keras"
+
+if not os.path.exists(model_path):
+    url = "https://drive.google.com/file/d/1sUivlHBdmrLstayWn9PCbUbXfUmfjSyw"
+    r = requests.get(url)
+    with open(model_path, 'wb') as f:
+        f.write(r.content)
+
+model = tf.keras.models.load_model(retinal_non_retinal_classifier.keras)
+
+
+#end of new line of code
 
 class_labels = ['0_No_DR', '1_Mild', '2_Moderate', '3_Severe', '4_Proliferate_DR']
 
